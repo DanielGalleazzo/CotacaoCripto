@@ -1,0 +1,14 @@
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\bin\Debug\net8.0\CriptomoedasAPI.exe
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\bin\Debug\net8.0\CriptomoedasAPI.deps.json
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\bin\Debug\net8.0\CriptomoedasAPI.runtimeconfig.json
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\bin\Debug\net8.0\CriptomoedasAPI.dll
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\bin\Debug\net8.0\CriptomoedasAPI.pdb
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.AssemblyInfoInputs.cache
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.AssemblyInfo.cs
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.csproj.CoreCompileInputs.cache
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.dll
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\refint\CriptomoedasAPI.dll
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.pdb
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.genruntimeconfig.cache
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\ref\CriptomoedasAPI.dll
