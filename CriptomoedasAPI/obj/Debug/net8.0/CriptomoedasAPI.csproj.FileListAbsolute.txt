@@ -13,3 +13,8 @@ C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\Criptomo
 C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.genruntimeconfig.cache
 C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\ref\CriptomoedasAPI.dll
 C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.sourcelink.json
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\bin\Debug\net8.0\SendGrid.dll
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\bin\Debug\net8.0\StarkbankEcdsa.dll
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.csproj.AssemblyReference.cache
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\Criptomo.AB44A372.Up2Date

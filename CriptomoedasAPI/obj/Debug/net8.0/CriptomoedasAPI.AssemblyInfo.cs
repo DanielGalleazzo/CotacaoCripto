@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CriptomoedasAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5dd4a78f08859ac3a5f7977333b9b4476eda0502")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b67a87e925fbd51c0d799f8d1bcb47c0a3a39fcf")]
 [assembly: System.Reflection.AssemblyProductAttribute("CriptomoedasAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CriptomoedasAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
