@@ -12,3 +12,4 @@ C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\refint\C
 C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.pdb
 C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.genruntimeconfig.cache
 C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\ref\CriptomoedasAPI.dll
+C:\Users\danie\Desktop\CriptomoedasAPI\CriptomoedasAPI\obj\Debug\net8.0\CriptomoedasAPI.sourcelink.json

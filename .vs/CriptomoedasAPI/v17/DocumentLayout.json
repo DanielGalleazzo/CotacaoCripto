@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\danie\\Desktop\\CriptomoedasAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DFE7BF08-2956-4F2D-B1F0-C1CD2E37891C}|CriptomoedasAPI\\CriptomoedasAPI.csproj|c:\\users\\danie\\desktop\\criptomoedasapi\\criptomoedasapi\\buscarmoedas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFE7BF08-2956-4F2D-B1F0-C1CD2E37891C}|CriptomoedasAPI\\CriptomoedasAPI.csproj|solutionrelative:criptomoedasapi\\buscarmoedas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DFE7BF08-2956-4F2D-B1F0-C1CD2E37891C}|CriptomoedasAPI\\CriptomoedasAPI.csproj|c:\\users\\danie\\desktop\\criptomoedasapi\\criptomoedasapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DFE7BF08-2956-4F2D-B1F0-C1CD2E37891C}|CriptomoedasAPI\\CriptomoedasAPI.csproj|solutionrelative:criptomoedasapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE7BF08-2956-4F2D-B1F0-C1CD2E37891C}|CriptomoedasAPI\\CriptomoedasAPI.csproj|c:\\users\\danie\\desktop\\criptomoedasapi\\criptomoedasapi\\buscarmoedas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE7BF08-2956-4F2D-B1F0-C1CD2E37891C}|CriptomoedasAPI\\CriptomoedasAPI.csproj|solutionrelative:criptomoedasapi\\buscarmoedas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DFE7BF08-2956-4F2D-B1F0-C1CD2E37891C}|CriptomoedasAPI\\CriptomoedasAPI.csproj|c:\\users\\danie\\desktop\\criptomoedasapi\\criptomoedasapi\\moedas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BuscarMoedas.cs",
               "DocumentMoniker": "C:\\Users\\danie\\Desktop\\CriptomoedasAPI\\CriptomoedasAPI\\BuscarMoedas.cs",
               "RelativeDocumentMoniker": "CriptomoedasAPI\\BuscarMoedas.cs",
@@ -34,8 +34,7 @@
               "RelativeToolTip": "CriptomoedasAPI\\BuscarMoedas.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T01:24:44.501Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T01:24:44.501Z"
             },
             {
               "$type": "Document",
@@ -47,18 +46,17 @@
               "RelativeToolTip": "CriptomoedasAPI\\Moedas.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T01:14:01.247Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T01:14:01.247Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\danie\\Desktop\\CriptomoedasAPI\\CriptomoedasAPI\\Program.cs",
               "RelativeDocumentMoniker": "CriptomoedasAPI\\Program.cs",
               "ToolTip": "C:\\Users\\danie\\Desktop\\CriptomoedasAPI\\CriptomoedasAPI\\Program.cs",
               "RelativeToolTip": "CriptomoedasAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T01:13:40.267Z",
               "EditorCaption": ""
