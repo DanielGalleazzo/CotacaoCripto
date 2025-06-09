@@ -29,6 +29,9 @@ namespace CriptomoedasAPI
 
         public DateTime Last_update { get; set; }
 
+        [JsonPropertyName("image")]
+         public string image { get; set; }
+
     }
   
 }
