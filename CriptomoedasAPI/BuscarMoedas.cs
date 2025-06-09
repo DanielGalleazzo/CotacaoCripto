@@ -15,8 +15,7 @@ namespace CriptomoedasAPI
             var Link = $"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={Uri.EscapeDataString(nomeMoeda)}";
             using var cliente = new HttpClient();
             cliente.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; CriptomoedasApp/1.0)");
-            var resposta = await cliente.GetFromJsonAsync<List<Moedas>>(Link);
-            return resposta ?? new List<Moedas>();
+            return await cliente.GetFromJsonAsync<List<Moedas>>(Link) ?? new List<Moedas>();
         }
     }
 }

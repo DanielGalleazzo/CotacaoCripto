@@ -29,8 +29,8 @@ foreach (var Moeda in moeda)
             var to = new EmailAddress(destinatario);
             var subject = "Informações da moeda" + Moeda.Name;
             var plainTextContent = "Utilizando a API do SendGrid";
-            var htmlContent = "Nome da moeda: " + Moeda.Name + " Preço atual: " + Moeda.Current_price +
-            " Pico nas últimas 24 horas:" + Moeda.High_24h + " Baixa das últimas 24 horas: " + Moeda.Low_24h;
+            var htmlContent = " Nome da moeda: " + Moeda.Name + "<br> Preço atual: " + Moeda.Current_price +
+            "<br> Pico nas últimas 24 horas:" + Moeda.High_24h + "<br> Baixa das últimas 24 horas: " + Moeda.Low_24h;
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
             Console.WriteLine($"Status Code: {response.StatusCode}");
