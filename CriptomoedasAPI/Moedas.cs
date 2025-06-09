@@ -25,6 +25,10 @@ namespace CriptomoedasAPI
         [JsonPropertyName("total_volume")]
         public double Total_volume { get; set; }
 
+        [JsonPropertyName("last_updated")]
+
+        public DateTime Last_update { get; set; }
+
     }
   
 }
