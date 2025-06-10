@@ -17,10 +17,10 @@ namespace CriptomoedasAPI
         public double Current_price { get; set; }
 
         [JsonPropertyName("high_24h")]
-        public double High_24h { get; set; }
+        public float High_24h { get; set; }
 
         [JsonPropertyName("low_24h")]
-        public double Low_24h { get; set; }
+        public float Low_24h { get; set; }
 
         [JsonPropertyName("total_volume")]
         public double Total_volume { get; set; }
