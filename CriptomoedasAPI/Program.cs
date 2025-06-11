@@ -183,7 +183,7 @@ switch (respostaPrimeiraPergunta)
             Console.WriteLine("Você deseja receber essas informações por e-mail ?");
             string respostaMoedaAnalise = Console.ReadLine();
 
-            if (respostaMoedaAnalise == "sim")
+            if (respostaMoedaAnalise.ToLower() == "sim")
             {
                 try
                 {
@@ -220,6 +220,36 @@ switch (respostaPrimeiraPergunta)
             Console.WriteLine("Id da moeda: " + MoedasRecemLancadas[i].Id);
             Console.WriteLine("Simbolo da moeda: " + MoedasRecemLancadas[i].Symbol);
             Console.WriteLine("-----");
+            for (int j = 14; j < i; j++)
+            {
+                Console.WriteLine("Você deseja receber essas informações por e-mail ?");
+                string respostaMoedaAnalise = Console.ReadLine();
+
+                if (respostaMoedaAnalise.ToLower() == "sim")
+                {
+                    try
+                    {
+                        var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
+                        var client = new SendGridClient(apiKey);
+                        var from = new EmailAddress("dagalleazzo@gmail.com");
+                        Console.WriteLine("Insira o email do destinatário: ");
+                        string destinatario = Console.ReadLine();
+                        var to = new EmailAddress(destinatario);
+                        var subject = "Informações das moedas";
+                        var plainTextContent = "Utilizando a API do SendGrid";
+                        var htmlContent = " Nome da moeda: " + MoedasRecemLancadas[i].Name + "<br> O seu id é: " + MoedasRecemLancadas[i].Id
+                            + "<br> O seu símbolo é:  " + MoedasRecemLancadas[i].Symbol;
+                        var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+                        var response = await client.SendEmailAsync(msg);
+                        Console.WriteLine($"Status Code: {response.StatusCode}");
+                        Console.WriteLine("E-mail enviado com sucesso ! Verifique o SPAN");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Não foi possível enviar o e-mail, código do erro: " + ex.Message);
+                    }
+                }
+            }
         }
         break;
 }
