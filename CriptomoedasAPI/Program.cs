@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using CriptomoedasAPI.Metodos;
+using CriptomoedasAPI.GetSet;
 
 TimeZoneInfo fusoLocal = TimeZoneInfo.Local;
 DateTime horaLocal = DateTime.Now;
@@ -22,7 +23,7 @@ switch (respostaPrimeiraPergunta)
     case 1:
         Console.WriteLine("Digite o nome da moeda você deseja");
         string moedaNome = Console.ReadLine();
-        var moeda = await BuscarMoedas.BuscarMoedasAsync(moedaNome, null);
+        var moeda = await BuscarMoeda.BuscarMoedaUnidade(moedaNome);
         foreach (var Moeda in moeda)
         {
             Console.WriteLine("Nome da moeda: " + Moeda.Name);
@@ -105,26 +106,33 @@ switch (respostaPrimeiraPergunta)
             Console.WriteLine("Alta: " + moeda1.High_24h + " e " + moeda2.High_24h);
             Console.WriteLine("Baixa: " + moeda1.Low_24h + " e " + moeda2.Low_24h);
             Console.WriteLine("Volume total: " + moeda1.Total_volume + " e " + moeda2.Total_volume);
+            Console.WriteLine("Informações re");
 
             Console.WriteLine("Voc~e deseja exportar essas informações para o e-mail ?");
             string respostaComparativo = Console.ReadLine();
             if (respostaComparativo == "sim")
             {
-                var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
-                var client = new SendGridClient(apiKey);
-                var from = new EmailAddress("dagalleazzo@gmail.com");
-                Console.WriteLine("Insira o email do destinatário: ");
-                string destinatario = Console.ReadLine();
-                var to = new EmailAddress(destinatario);
-                var subject = "Informações das moedas";
-                var plainTextContent = "Utilizando a API do SendGrid";
-                var htmlContent = " Nome da primeira moeda: " + moeda1.Name + "<br> Nome da segunda moeda: " + moeda2.Name
-                    + "<br> Preços atuais: " + moeda1.Current_price + " || " + moeda2.Current_price +
-                    "<br> Diferença de valor das duas moedas: " + (moeda1.Current_price - moeda2.Current_price);
-                var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
-                var response = await client.SendEmailAsync(msg);
-                Console.WriteLine($"Status Code: {response.StatusCode}");
-                Console.WriteLine("E-mail enviado com sucesso ! Verifique o SPAN");
+                try
+                {
+                    var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
+                    var client = new SendGridClient(apiKey);
+                    var from = new EmailAddress("dagalleazzo@gmail.com");
+                    Console.WriteLine("Insira o email do destinatário: ");
+                    string destinatario = Console.ReadLine();
+                    var to = new EmailAddress(destinatario);
+                    var subject = "Informações das moedas";
+                    var plainTextContent = "Utilizando a API do SendGrid";
+                    var htmlContent = " Nome da primeira moeda: " + moeda1.Name + "<br> Nome da segunda moeda: " + moeda2.Name
+                        + "<br> Preços atuais: " + moeda1.Current_price + " || " + moeda2.Current_price +
+                        "<br> Diferença de valor das duas moedas: " + (moeda1.Current_price - moeda2.Current_price);
+                    var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+                    var response = await client.SendEmailAsync(msg);
+                    Console.WriteLine($"Status Code: {response.StatusCode}");
+                    Console.WriteLine("E-mail enviado com sucesso ! Verifique o SPAN");
+                }
+                catch (Exception ex){
+                    Console.WriteLine("Não foi possível enviar o e-mail, código do erro: " + ex.Message);
+                }
 
             }
         }
@@ -133,6 +141,7 @@ switch (respostaPrimeiraPergunta)
     case 3:
         Console.WriteLine("Aqui está uma lista das dez moedas mais valiosas");
         var MoedA = await MoedasMaisValiosas.MoedasMaisValiosasAsync();
+        
         foreach (var MOEDA in MoedA)
         {
             Console.WriteLine("Nome da moeda: " + MOEDA.Name);
@@ -167,18 +176,50 @@ switch (respostaPrimeiraPergunta)
             Console.WriteLine("A maior alta dessa moeda foi: " + moedaAlta.All_Time_High);
             Console.WriteLine("O preço atual está: " + moedaAlta.Current_price);
             Console.WriteLine("A diferença é de: " + (moedaAlta.All_Time_High - moedaAlta.Current_price));
+            DateTime suaLocalizacao = TimeZoneInfo.ConvertTimeFromUtc(moedaAlta.Last_update, fusoLocal);  
+            Console.WriteLine("Horário da informação (São Paulo): " + suaLocalizacao);
+            Console.WriteLine("Horário da informação ( São Francisco) " + moedaAlta.Last_update);
+            Console.WriteLine("");
+            Console.WriteLine("Você deseja receber essas informações por e-mail ?");
+            string respostaMoedaAnalise = Console.ReadLine();
+
+            if (respostaMoedaAnalise == "sim")
+            {
+                try
+                {
+                    var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
+                    var client = new SendGridClient(apiKey);
+                    var from = new EmailAddress("dagalleazzo@gmail.com");
+                    Console.WriteLine("Insira o email do destinatário: ");
+                    string destinatario = Console.ReadLine();
+                    var to = new EmailAddress(destinatario);
+                    var subject = "Informações das moedas";
+                    var plainTextContent = "Utilizando a API do SendGrid";
+                    var htmlContent = " Nome da moeda: " + moedaAlta.Name + "<br> O preço atual está: " + moedaAlta.Current_price
+                        + "<br> A sua maior alta foi: " + moedaAlta.All_Time_High +
+                        "<br> Diferença de valor: " + (moedaAlta.All_Time_High - moedaAlta.Current_price);
+                    var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+                    var response = await client.SendEmailAsync(msg);
+                    Console.WriteLine($"Status Code: {response.StatusCode}");
+                    Console.WriteLine("E-mail enviado com sucesso ! Verifique o SPAN");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Não foi possível enviar o e-mail, código do erro: " + ex.Message);
+                }
+            }
         }
         break;
         case 5:
         Console.WriteLine("Aqui está uma lista das moedas recém lançadas");
         var MoedasRecemLancadas = await NovasMoedas.MoedasRecemLancadas();
 
-        foreach (var NovasMoedas in MoedasRecemLancadas) {
-            Console.WriteLine("Nome da moeda: " + NovasMoedas.Name);
-            Console.WriteLine("Id da moeda: " + NovasMoedas.Id);
-            Console.WriteLine("Simbolo da moeda: " + NovasMoedas.Symbol);
+        for (int i = 0; i <= 15; i++)
+        {       
+            Console.WriteLine("Nome da moeda: " + MoedasRecemLancadas[i].Name);
+            Console.WriteLine("Id da moeda: " + MoedasRecemLancadas[i].Id);
+            Console.WriteLine("Simbolo da moeda: " + MoedasRecemLancadas[i].Symbol);
             Console.WriteLine("-----");
-
-             }
+        }
         break;
 }

@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class BuscarMoeda {
-    public static List<InfoMoeda> buscarMoedas(String nomeMoeda) throws IOException, InterruptedException {
+    public static List<InfoMoeda> buscarMoedas(String nomeMoeda)  {
         String link = "https://api.coingecko.com/api/v3/search?query=" + nomeMoeda;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
