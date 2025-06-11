@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 
 
-namespace CriptomoedasAPI
+namespace CriptomoedasAPI.GetSet
 {
     public class Moedas
     {
@@ -31,6 +31,8 @@ namespace CriptomoedasAPI
 
         [JsonPropertyName("image")]
          public string image { get; set; }
+        [JsonPropertyName("ath")]
+        public float All_Time_High { get; set; }
 
     }
   

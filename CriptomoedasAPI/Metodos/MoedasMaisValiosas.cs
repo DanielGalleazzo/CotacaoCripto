@@ -4,8 +4,9 @@ using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
+using CriptomoedasAPI.GetSet;
 
-namespace CriptomoedasAPI
+namespace CriptomoedasAPI.Metodos
 {
     public class MoedasMaisValiosas
     {

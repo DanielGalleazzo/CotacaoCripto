@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using SendGrid;
 using SendGrid.Helpers.Mail;
-using CriptomoedasAPI;
+using CriptomoedasAPI.Metodos;
 
 TimeZoneInfo fusoLocal = TimeZoneInfo.Local;
 DateTime horaLocal = DateTime.Now;
@@ -11,6 +11,8 @@ Console.WriteLine("Qual informação você deseja executar ?");
 Console.WriteLine("1: Ver o preço de uma moeda");
 Console.WriteLine("2: Comparar duas moedas");
 Console.WriteLine("3: Ver as dez moedas mais valiosas do momento");
+Console.WriteLine("4: Comparar com a maior alta");
+Console.WriteLine("5: Ver as novas moedas");
 Console.WriteLine("------------------");
 Console.WriteLine("Atenção: todas as informações estão em USD");
 int respostaPrimeiraPergunta = int.Parse(Console.ReadLine());
@@ -82,20 +84,21 @@ switch (respostaPrimeiraPergunta)
         }
         break;
 
-        case 2:
+    case 2:
         Console.WriteLine("Digite o nome da primeira moeda");
         string primeiraMoeda = Console.ReadLine().ToLower().Trim();
         Console.WriteLine("Digite o nome da segunda moeda");
         string segundaMoeda = Console.ReadLine().ToLower().Trim();
-        var moedaComparacao = await BuscarMoedas.BuscarMoedasAsync(primeiraMoeda,segundaMoeda);
+        var moedaComparacao = await BuscarMoedas.BuscarMoedasAsync(primeiraMoeda, segundaMoeda);
         var moeda1 = moedaComparacao[0];
         var moeda2 = moedaComparacao[1];
-          if (moeda1 == null || moeda2 == null)
+        if (moeda1 == null || moeda2 == null)
         {
             Console.WriteLine("Alguma das duas moedas estão faltando");
         }
- 
-        else {
+
+        else
+        {
             Console.WriteLine("Comparação entre:" + moeda1.Name + " e " + moeda2.Name);
             Console.WriteLine("Preço atual: " + moeda1.Current_price + " e " + +moeda2.Current_price + " diferença de " +
             (moeda1.Current_price - moeda2.Current_price));
@@ -124,13 +127,13 @@ switch (respostaPrimeiraPergunta)
                 Console.WriteLine("E-mail enviado com sucesso ! Verifique o SPAN");
 
             }
-            }
+        }
         break;
 
     case 3:
         Console.WriteLine("Aqui está uma lista das dez moedas mais valiosas");
         var MoedA = await MoedasMaisValiosas.MoedasMaisValiosasAsync();
-        foreach(var MOEDA in MoedA)
+        foreach (var MOEDA in MoedA)
         {
             Console.WriteLine("Nome da moeda: " + MOEDA.Name);
             Console.WriteLine("Preço atual: " + MOEDA.Current_price);
@@ -151,14 +154,31 @@ switch (respostaPrimeiraPergunta)
                     "<br> Valor: " + MOEDA.Current_price;
             }
             */
-
         }
+        break;
 
+        case 4:
+        Console.WriteLine("Você quer analisar qual moeda ?");
+        string MoedaAnalise = Console.ReadLine();
+        var MoedaAnalise1 = await BuscarMoedas.BuscarMoedasAsync(MoedaAnalise, null);
+
+        foreach(var moedaAlta in MoedaAnalise1)
+        {
+            Console.WriteLine("A maior alta dessa moeda foi: " + moedaAlta.All_Time_High);
+            Console.WriteLine("O preço atual está: " + moedaAlta.Current_price);
+            Console.WriteLine("A diferença é de: " + (moedaAlta.All_Time_High - moedaAlta.Current_price));
+        }
+        break;
+        case 5:
+        Console.WriteLine("Aqui está uma lista das moedas recém lançadas");
+        var MoedasRecemLancadas = await NovasMoedas.MoedasRecemLancadas();
+
+        foreach (var NovasMoedas in MoedasRecemLancadas) {
+            Console.WriteLine("Nome da moeda: " + NovasMoedas.Name);
+            Console.WriteLine("Id da moeda: " + NovasMoedas.Id);
+            Console.WriteLine("Simbolo da moeda: " + NovasMoedas.Symbol);
+            Console.WriteLine("-----");
+
+             }
         break;
 }
-
-
-
-
-
-
